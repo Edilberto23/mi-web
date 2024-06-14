@@ -16,15 +16,15 @@ body {
 
 body::before {
     content: ""; /* Crear un pseudo-elemento vacío */
-    background-image: url(fondo.jpg); /* Imagen de fondo */
+    background-image: url('fondo.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Ajustar la imagen para cubrir el área */
+    background-attachment: fixed; /* Fijar la imagen de fondo */
+    background-position: center; /* Centrar la imagen de fondo */
     width: 100%; /* Ancho completo */
     height: 100%; /* Altura completa */
-    background-size: cover; /* Ajustar la imagen para cubrir el área */
-    position: absolute; /* Posicionamiento absoluto */
+    position: fixed; /* Posicionamiento fijo */
     top: 0; 
     left: 0; 
-    right: 0; 
-    bottom: 0; 
     opacity: 0.9; /* Opacidad del fondo */
     z-index: -1; /* Colocar detrás de otros elementos */
 }
@@ -167,7 +167,7 @@ main {
 }
 
 #card {
-  margin-top: 220px;
+  
     height: auto; /* Altura automática */
     width: 90%; /* Ancho del 90% */
     max-width: 800px; /* Ancho máximo */
@@ -206,6 +206,7 @@ main {
 }
 
 .side.one {
+ 
     width: 100%; /* Ancho completo */
     max-width: 320px; /* Ancho máximo */
     transform: skew(10deg, 20deg); /* Sesgar el contenido */
@@ -213,6 +214,7 @@ main {
 }
 
 .side.two {
+ 
     transform: skew(10deg, -15deg); /* Sesgar el contenido */
     background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0); /* Degradado de fondo */
 }
@@ -332,7 +334,10 @@ main {
     left: 15px; /* Desplazar a la izquierda */
     transition: .5s; /* Transición suave */
 }
-
+.valentines-day{
+    margin-bottom: -120px;
+   
+}
 .valentines-day:hover .heart {
     transform: translateY(-50px) rotate(-45deg); /* Mover el corazón hacia arriba al pasar el mouse */
 }
@@ -342,7 +347,7 @@ main {
 }
 
 /* Estilos para dispositivos móviles */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 300px) {
     .container {
         font-size: 5vw; /* Tamaño del texto basado en el viewport */
         margin-right: 0; /* Sin margen derecho */
