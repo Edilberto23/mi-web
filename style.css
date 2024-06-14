@@ -14,6 +14,7 @@ body {
     overflow: hidden; /* Evitar desplazamiento horizontal y vertical */
     box-sizing: border-box;
 
+    
     justify-content: center; /* Centrar los elementos verticalmente */
 }
 
@@ -23,13 +24,14 @@ body::before {
     background-size: cover; /* Ajustar la imagen para cubrir el área */
     background-attachment: fixed; /* Fijar la imagen de fondo */
     background-position: center; /* Centrar la imagen de fondo */
-    width: 100%; /* Ancho completo */
+    width: 100%;
     height: 100%; /* Altura completa */
     position: fixed; /* Posicionamiento fijo */
     top: 0; 
     left: 0; 
     opacity: 0.9; /* Opacidad del fondo */
     z-index: -1; /* Colocar detrás de otros elementos */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical si es necesario */
 }
 
 header, footer {
@@ -181,10 +183,10 @@ main {
     box-sizing: border-box; /* Incluir padding y border en el tamaño total del elemento */
 
     margin-bottom: -120px; /* Asegúrate de que no haya margen inferior */
-   
-   
+    
     
 }
+
 
 #card h1 {
     font-size: 3em; /* Tamaño del título */
@@ -360,60 +362,24 @@ main {
     transform: translateY(-50px); /* Mover el texto hacia arriba al pasar el mouse */
 }
 
-/* Estilos para dispositivos móviles */
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 768px) {
+    /* Estilos específicos para dispositivos con ancho máximo de 768px (tablets y móviles) */
     header h1 {
-        font-size: 10px;
+        font-size: 15px; /* Ejemplo de ajuste de tamaño de fuente */
     }
-    header .left-button {
-        font-size: 10px;
-        padding: 6px 12px;
-    }
-    footer {
-        padding: 6px;
-    }
-
     .container {
-        font-size: 8vw;
-        margin-right: 10px;
+        font-size: 8vw; /* Ajuste de tamaño de fuente para el contenedor */
     }
-
-
-    .container {
-        font-size: 5vw; /* Tamaño del texto basado en el viewport */
-        margin-right: 0; /* Sin margen derecho */
-    }
-
-    .container .contenido {
-        font-size: 14px; /* Tamaño del contenido */
-    }
-
-    .fa-heart {
-        font-size: 5vw; /* Tamaño del icono basado en el viewport */
-        margin-bottom: 0; /* Margen inferior */
-    }
-
     #card {
-        width: 10%; /* Ancho del 90% */
-        height: auto; /* Altura automática */
-        margin: 2em auto; /* Margen automático en los lados */
+        width: 90%; /* Ajuste del ancho del contenedor de la tarjeta */
+        margin: 2em auto; /* Ajuste del margen */
     }
-
     #card h1 {
-        font-size: 1em; /* Tamaño del título */
+        font-size: 2em; /* Ajuste de tamaño de fuente para el título de la tarjeta */
     }
-
     #card p {
-        font-size: 1em; /* Tamaño del párrafo */
-        padding-left: 15px; /* Relleno a la izquierda */
-        padding-right: 15px; /* Relleno a la derecha */
-    }
-
-    .side {
-        padding: 30px; /* Relleno interno */
-    }
-
-    .side.one, .side.two {
-        max-width: 60%; /* Ancho máximo completo */
+        font-size: 1em; /* Ajuste de tamaño de fuente para los párrafos de la tarjeta */
+        padding-left: 15px; /* Ajuste de padding */
+        padding-right: 15px; /* Ajuste de padding */
     }
 }
