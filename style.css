@@ -3,15 +3,18 @@
 
 /* Estilos generales */
 body {
-    display: flex; /* Usar Flexbox para el layout */
-    flex-direction: column; /* Colocar los elementos en una columna */
-    align-items: center; /* Centrar los elementos horizontalmente */
-    font-family: 'Sacramento', cursive; /* Fuente principal */
-    margin: 0; /* Sin margen alrededor del body */
-    height: 100vh; /* Altura del body al 100% del viewport */
-    position: relative; /* Posicionamiento relativo para los hijos absolutos */
-    overflow-x: hidden; /* Evitar desplazamiento horizontal */
-    box-sizing: border-box; /* Incluir padding y border en el tamaño total del elemento */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centrar los elementos verticalmente */
+    font-family: 'Sacramento', cursive;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+    overflow: hidden; /* Evitar desplazamiento horizontal y vertical */
+    box-sizing: border-box;
+
+    justify-content: center; /* Centrar los elementos verticalmente */
 }
 
 body::before {
@@ -65,7 +68,7 @@ header h1 {
 }
 
 header .left-button {
-  font-size: 16px; /* Tamaño de la fuente del botón */
+  font-size: 12px; /* Tamaño de la fuente del botón */
   padding: 10px 20px; /* Relleno interno del botón */
   background-color: #566ac4; /* Color de fondo del botón */
   color: white; /* Color del texto del botón */
@@ -79,6 +82,7 @@ header .left-button {
 header .left-button:hover {
   background-color: #31c57b; /* Cambiar color al pasar el mouse */
 }
+
 
 
 
@@ -176,6 +180,9 @@ main {
     visibility: hidden; /* Oculto por defecto */
     box-sizing: border-box; /* Incluir padding y border en el tamaño total del elemento */
 
+    margin-bottom: -120px; /* Asegúrate de que no haya margen inferior */
+   
+   
     
 }
 
@@ -223,7 +230,14 @@ main {
     position: relative; /* Posicionamiento relativo */
     cursor: pointer; /* Cambiar cursor al pasar el mouse */
     text-align: center; /* Alinear el texto al centro */
-    margin: 15%;
+    margin: 0;
+    top: 400px;
+    margin-bottom: -120px;
+
+  
+    margin-bottom: 0; /* Asegúrate de que no haya margen inferior */
+    padding-bottom: 0; /* Asegúrate de que no haya padding inferior */
+    
  
 }
 
@@ -265,6 +279,9 @@ main {
     width: 180px; /* Ancho del corazón */
     filter: drop-shadow(0 -10px 25px rgba(0, 0, 0, .3)); /* Sombra del corazón */
     transition: .5s; /* Transición suave */
+
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar padding */
 }
 
 .heart:before,
@@ -334,10 +351,7 @@ main {
     left: 15px; /* Desplazar a la izquierda */
     transition: .5s; /* Transición suave */
 }
-.valentines-day{
-    margin-bottom: -120px;
-   
-}
+
 .valentines-day:hover .heart {
     transform: translateY(-50px) rotate(-45deg); /* Mover el corazón hacia arriba al pasar el mouse */
 }
@@ -348,6 +362,23 @@ main {
 
 /* Estilos para dispositivos móviles */
 @media only screen and (max-width: 300px) {
+    header h1 {
+        font-size: 10px;
+    }
+    header .left-button {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+    footer {
+        padding: 6px;
+    }
+
+    .container {
+        font-size: 8vw;
+        margin-right: 10px;
+    }
+
+
     .container {
         font-size: 5vw; /* Tamaño del texto basado en el viewport */
         margin-right: 0; /* Sin margen derecho */
@@ -359,17 +390,17 @@ main {
 
     .fa-heart {
         font-size: 5vw; /* Tamaño del icono basado en el viewport */
-        margin-bottom: 10px; /* Margen inferior */
+        margin-bottom: 0; /* Margen inferior */
     }
 
     #card {
-        width: 90%; /* Ancho del 90% */
+        width: 10%; /* Ancho del 90% */
         height: auto; /* Altura automática */
         margin: 2em auto; /* Margen automático en los lados */
     }
 
     #card h1 {
-        font-size: 2em; /* Tamaño del título */
+        font-size: 1em; /* Tamaño del título */
     }
 
     #card p {
@@ -383,6 +414,6 @@ main {
     }
 
     .side.one, .side.two {
-        max-width: 100%; /* Ancho máximo completo */
+        max-width: 60%; /* Ancho máximo completo */
     }
 }
