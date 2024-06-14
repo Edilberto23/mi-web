@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css?family=Sacramento');
+@import url('https://fonts.googleapis.com/css?family=Galada&display=swap');
+
+/* Estilos generales */
+body {
+    display: flex; /* Usar Flexbox para el layout */
+    flex-direction: column; /* Colocar los elementos en una columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+    font-family: 'Sacramento', cursive; /* Fuente principal */
+    margin: 0; /* Sin margen alrededor del body */
+    height: 100vh; /* Altura del body al 100% del viewport */
+    position: relative; /* Posicionamiento relativo para los hijos absolutos */
+    overflow-x: hidden; /* Evitar desplazamiento horizontal */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total del elemento */
+}
+
+body::before {
+    content: ""; /* Crear un pseudo-elemento vacío */
+    background-image: url(fondo.jpg); /* Imagen de fondo */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-size: cover; /* Ajustar la imagen para cubrir el área */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    opacity: 0.9; /* Opacidad del fondo */
+    z-index: -1; /* Colocar detrás de otros elementos */
+}
+
+header, footer {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Relleno interno */
+    text-align: center; /* Alinear el texto al centro */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de los elementos */
+    position: fixed; /* Posicionamiento fijo */
+    left: 0; 
+    z-index: 1000; /* Encima de otros elementos */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total del elemento */
+}
+
+
+/* Estilos para el header */
+header {
+  display: flex; /* Usar Flexbox */
+  align-items: center; /* Centrar verticalmente */
+  justify-content: center; /* Centrar horizontalmente */
+  background-color: #f8f8f8; /* Color de fondo del header */
+  padding: 10px; /* Relleno interno */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra del header */
+  position: fixed; /* Posicionamiento fijo */
+  width: 100%; /* Ancho completo */
+  top: 0; /* Fijar en la parte superior */
+  z-index: 1000; /* Encima de otros elementos */
+}
+
+header h1 {
+  flex: 1; /* Permitir que el h1 crezca para ocupar espacio */
+  font-size: 26px; /* Tamaño de la fuente del título */
+  text-align: center; /* Alinear el texto al centro */
+  color: #1619e9; /* Color del texto */
+  margin: 0; /* Sin margen */
+  font-family: 'Sacramento', cursive; /* Fuente del título */
+}
+
+header .left-button {
+  font-size: 16px; /* Tamaño de la fuente del botón */
+  padding: 10px 20px; /* Relleno interno del botón */
+  background-color: #566ac4; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar cursor al pasar el mouse */
+  margin-left: auto; /* Empujar el botón hacia la derecha */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+header .left-button:hover {
+  background-color: #31c57b; /* Cambiar color al pasar el mouse */
+}
+
+
+
+
+footer {
+    background-color: #566ac4; /* Color de fondo del footer */
+    color: white; /* Color del texto */
+    bottom: 0; /* Fijar en la parte inferior */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Fuente del footer */
+    height: auto; /* Altura automática */
+    font-size: 14px; /* Tamaño de la fuente */
+}
+
+main {
+    flex: 1; /* Crecer para llenar el espacio disponible */
+    display: flex; /* Usar Flexbox para el layout */
+    flex-direction: column; /* Colocar los elementos en una columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+    justify-content: center; /* Centrar los elementos verticalmente */
+    padding: 20px; /* Relleno interno */
+    margin-top: 80px; /* Espacio para no superponer el header */
+    margin-bottom: 80px; /* Espacio para no superponer el footer */
+}
+
+/* Asegúrate de que todos los iconos sociales tengan los mismos estilos */
+.social-icons {
+  text-align: center; /* Centrar horizontalmente los íconos */
+  margin-bottom: -15px; /* Margen inferior para separar del texto */
+}
+.social-icons a {
+  margin: 0  0px; /* Margen alrededor de los iconos sociales */
+  color: #fff; /* Color de los iconos */
+ 
+  text-decoration: none; /* Sin subrayado */
+  transition: transform 0.3s, color 0.3s; /* Transición suave para tamaño y color */
+}
+
+.social-icons a:hover {
+  transform: scale(1.9); /* Aumentar tamaño al pasar el mouse */
+  color: #f8b1d5; /* Cambiar color del icono al pasar el mouse */
+}
+
+.social-icons i {
+  font-size: 20px; /* Tamaño de los iconos */
+  padding: 10px; /* Relleno interno */
+  border-radius: 50%; /* Bordes redondeados */
+}
+/* Estilos para el corazón */
+.container {
+    font-size: 10vw; /* Tamaño del texto basado en el viewport */
+    color: red; /* Color del texto */
+    z-index: 2; /* Encima de otros elementos */
+    animation: 3s ease infinite corazon; /* Animación infinita */
+    text-shadow: 4px 4px 25px rgba(255, 0, 0, 0.6); /* Sombra del texto */
+    margin-right: 450px; /* Margen a la derecha */
+}
+
+.container .contenido {
+    position: absolute; /* Posicionamiento absoluto */
+    left: 50%; /* Centrar horizontalmente */
+    top: 36%; /* Colocar a 36% desde la parte superior */
+    transform: translate(-50%, -50%); /* Centrar */
+    color: #fff; /* Color del texto */
+    text-align: center; /* Alinear el texto al centro */
+    font-family: Arial, Helvetica, sans-serif; /* Fuente */
+}
+
+.container .contenido h1 {
+    font-size: 20px; /* Tamaño del título */
+}
+
+.container .contenido p {
+    font-size: 10px; /* Tamaño del párrafo */
+}
+
+.fa-heart {
+    font-size: 10vw; /* Tamaño del icono basado en el viewport */
+    margin-bottom: 20px; /* Margen inferior */
+    margin-right: 10px; /* Margen derecho */
+}
+
+@keyframes corazon {
+    50% {
+        transform: scale(1.3); /* Escalar al 130% en el medio de la animación */
+    }
+}
+
+#card {
+  margin-top: 220px;
+    height: auto; /* Altura automática */
+    width: 90%; /* Ancho del 90% */
+    max-width: 800px; /* Ancho máximo */
+    margin: 2em auto; /* Margen automático en los lados */
+    display: flex; /* Usar Flexbox */
+    visibility: hidden; /* Oculto por defecto */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total del elemento */
+
+    
+}
+
+#card h1 {
+    font-size: 3em; /* Tamaño del título */
+    margin: 0; /* Sin margen */
+    color: pink; /* Color del título */
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Fuente */
+    text-align: center; /* Alinear el texto al centro */
+}
+
+#card p {
+    font-size: 1.5em; /* Tamaño del párrafo */
+    text-align: justify; /* Justificar el texto */
+    padding-left: 30px; /* Relleno a la izquierda */
+    padding-right: 30px; /* Relleno a la derecha */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total del elemento */
+}
+/*estilos para el contenido de la carta*/
+.side {
+
+    background: #eee; /* Color de fondo */
+    height: auto; /* Altura automática */
+    width: 100%; /* Ancho completo */
+    max-width: 700px; /* Ancho máximo */
+    padding: 50px; /* Relleno interno */
+    box-sizing: border-box; /* Incluir padding y border en el tamaño total del elemento */
+}
+
+.side.one {
+    width: 100%; /* Ancho completo */
+    max-width: 320px; /* Ancho máximo */
+    transform: skew(10deg, 20deg); /* Sesgar el contenido */
+    background: linear-gradient(90deg, #fff, #fff 40%, #ddd); /* Degradado de fondo */
+}
+
+.side.two {
+    transform: skew(10deg, -15deg); /* Sesgar el contenido */
+    background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0); /* Degradado de fondo */
+}
+
+.valentines-day {
+    position: relative; /* Posicionamiento relativo */
+    cursor: pointer; /* Cambiar cursor al pasar el mouse */
+    text-align: center; /* Alinear el texto al centro */
+    margin: 15%;
+ 
+}
+
+.envelope {
+    position: relative; /* Posicionamiento relativo */
+    filter: drop-shadow(0 0 25px rgba(0, 0, 0, .3)); /* Sombra del sobre */
+}
+
+.envelope:before {
+    content: ""; /* Crear un pseudo-elemento vacío */
+    position: absolute; /* Posicionamiento absoluto */
+    width: 254px; /* Ancho del sobre */
+    height: 254px; /* Altura del sobre */
+    background-color: #cfa463; /* Color de fondo */
+    transform: rotate(-45deg); /* Rotar el sobre */
+    border-radius: 0 15px 0 0; /* Bordes redondeados */
+    left: -37px; /* Posicionar a la izquierda */
+    top: -82px; /* Posicionar hacia arriba */
+}
+
+.envelope:after {
+    content: ""; /* Crear un pseudo-elemento vacío */
+    position: absolute; /* Posicionamiento absoluto */
+    background-color: #b65aae; /* Color de fondo */
+    width: 360px; /* Ancho del sobre */
+    height: 225px; /* Altura del sobre */
+    left: -90px; /* Posicionar a la izquierda */
+    top: 45px; /* Posicionar hacia arriba */
+}
+
+.heart {
+    position: relative; /* Posicionamiento relativo */
+    background-color: #fa8703; /* Color de fondo */
+    display: inline-block; /* Mostrar en línea */
+    height: 180px; /* Altura del corazón */
+    top: 50px; /* Posicionar hacia arriba */
+    left: 0; /* Sin desplazamiento a la izquierda */
+    transform: rotate(-45deg); /* Rotar el corazón */
+    width: 180px; /* Ancho del corazón */
+    filter: drop-shadow(0 -10px 25px rgba(0, 0, 0, .3)); /* Sombra del corazón */
+    transition: .5s; /* Transición suave */
+}
+
+.heart:before,
+.heart:after {
+    content: ""; /* Crear pseudo-elementos vacíos */
+    background-color: #fa8703; /* Color de fondo */
+    border-radius: 50%; /* Bordes redondeados */
+    height: 180px; /* Altura del corazón */
+    width: 180px; /* Ancho del corazón */
+    position: absolute; /* Posicionamiento absoluto */
+}
+
+.heart:before {
+    top: -100px; /* Posicionar hacia arriba */
+    left: 0; /* Sin desplazamiento a la izquierda */
+}
+
+.heart:after {
+    left: 100px; /* Desplazar a la izquierda */
+    top: 0; /* Sin desplazamiento hacia arriba */
+}
+
+.front {
+    position: absolute; /* Posicionamiento absoluto */
+    width: 0; /* Sin ancho */
+    height: 0; /* Sin altura */
+    border-right: 190px solid #cfa463; /* Borde derecho */
+    border-top: 113px solid transparent; /* Borde superior transparente */
+    border-bottom: 113px solid transparent; /* Borde inferior transparente */
+    top: 44px; /* Posicionar hacia arriba */
+    left: 80px; /* Desplazar a la izquierda */
+    z-index: 4; /* Encima de otros elementos */
+}
+
+.front:before {
+    content: ""; /* Crear un pseudo-elemento vacío */
+    position: absolute; /* Posicionamiento absoluto */
+    width: 0; /* Sin ancho */
+    height: 0; /* Sin altura */
+    border-left: 190px solid #cfa463; /* Borde izquierdo */
+    border-top: 113px solid transparent; /* Borde superior transparente */
+    border-bottom: 113px solid transparent; /* Borde inferior transparente */
+    top: -113px; /* Posicionar hacia arriba */
+    left: -170px; /* Desplazar a la izquierda */
+}
+
+.front:after {
+    width: 0; /* Sin ancho */
+    height: 0; /* Sin altura */
+    position: absolute; /* Posicionamiento absoluto */
+    content: ""; /* Crear un pseudo-elemento vacío */
+    border-bottom: 150px solid #cfa463; /* Borde inferior */
+    border-right: 180px solid transparent; /* Borde derecho transparente */
+    border-left: 180px solid transparent; /* Borde izquierdo transparente */
+    top: -36px; /* Posicionar hacia arriba */
+    left: -170px; /* Desplazar a la izquierda */
+}
+
+.text {
+    position: absolute; /* Posicionamiento absoluto */
+    font-family: arial; /* Fuente */
+    letter-spacing: 5px; /* Espaciado entre letras */
+    text-align: center; /* Alinear el texto al centro */
+    color: white; /* Color del texto */
+    z-index: 2; /* Encima de otros elementos */
+    top: 80px; /* Posicionar hacia arriba */
+    left: 15px; /* Desplazar a la izquierda */
+    transition: .5s; /* Transición suave */
+}
+
+.valentines-day:hover .heart {
+    transform: translateY(-50px) rotate(-45deg); /* Mover el corazón hacia arriba al pasar el mouse */
+}
+
+.valentines-day:hover .text {
+    transform: translateY(-50px); /* Mover el texto hacia arriba al pasar el mouse */
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .container {
+        font-size: 5vw; /* Tamaño del texto basado en el viewport */
+        margin-right: 0; /* Sin margen derecho */
+    }
+
+    .container .contenido {
+        font-size: 14px; /* Tamaño del contenido */
+    }
+
+    .fa-heart {
+        font-size: 5vw; /* Tamaño del icono basado en el viewport */
+        margin-bottom: 10px; /* Margen inferior */
+    }
+
+    #card {
+        width: 90%; /* Ancho del 90% */
+        height: auto; /* Altura automática */
+        margin: 2em auto; /* Margen automático en los lados */
+    }
+
+    #card h1 {
+        font-size: 2em; /* Tamaño del título */
+    }
+
+    #card p {
+        font-size: 1em; /* Tamaño del párrafo */
+        padding-left: 15px; /* Relleno a la izquierda */
+        padding-right: 15px; /* Relleno a la derecha */
+    }
+
+    .side {
+        padding: 30px; /* Relleno interno */
+    }
+
+    .side.one, .side.two {
+        max-width: 100%; /* Ancho máximo completo */
+    }
+}
