@@ -365,14 +365,14 @@ main {
 @media only screen and (max-width: 768px) {
     /* Estilos específicos para dispositivos con ancho máximo de 768px (tablets y móviles) */
     header h1 {
-        font-size: 15px; /* Ejemplo de ajuste de tamaño de fuente */
+        font-size: 20px; /* Ejemplo de ajuste de tamaño de fuente */
     }
     .container {
         font-size: 8vw; /* Ajuste de tamaño de fuente para el contenedor */
     }
     #card {
-        width: 90%; /* Ajuste del ancho del contenedor de la tarjeta */
-        margin: 2em auto; /* Ajuste del margen */
+        width: 95%; /* Ajuste del ancho del contenedor de la tarjeta */
+        margin: 3em auto; /* Ajuste del margen */
     }
     #card h1 {
         font-size: 2em; /* Ajuste de tamaño de fuente para el título de la tarjeta */
